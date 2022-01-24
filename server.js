@@ -8,7 +8,12 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
-mongoose.connect('mongodb+srv://sarnendu:rupu@cluster0.zqzj0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+const PORT = process.env.PORT || 3001 ;
+const URL = 'mongodb+srv://sarnendu:rupu@cluster0.zqzj0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+
+
+mongoose.connect(process.env.MONGO_CONNECTION_URL || URL,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 
@@ -75,6 +80,6 @@ app.post("/signup",(req,res)=>{
 
 
 
-app.listen(3001,()=>{
+app.listen(PORT,()=>{
     console.log("Backend Started At The Port 3001");
 })
