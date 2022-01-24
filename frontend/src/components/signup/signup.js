@@ -23,10 +23,11 @@ const SignUp = () => {
     const history= useHistory();
 
     const signUp = async() =>{
+        const SIGNUP_PORT = 'http://localhost:3001/signup' ;
         const { name,email,password,reEnterPassword} = user;
         if(name && email && (password===reEnterPassword)){
             
-            axios.post('http://localhost:3001/signup',user)
+            axios.post(SIGNUP_PORT,user)
             .then(res => {
 
                 alert(res.data);
