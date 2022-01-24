@@ -27,7 +27,7 @@ const SignUp = () => {
         const { name,email,password,reEnterPassword} = user;
         if(name && email && (password===reEnterPassword)){
             
-            axios.post(process.env.SIGNUP_PORT || SIGNUP_PORT,user)
+            axios.post(process.env.SIGNUP || SIGNUP_PORT,user)
             .then(res => {
 
                 alert(res.data);

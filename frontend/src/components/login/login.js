@@ -26,7 +26,7 @@ const Login = ({setLoginUser}) => {
     const login = () =>{
        
             const LOGIN_PORT = 'http://localhost:3001/login' ;
-            axios.post(process.env.LOGIN_PORT || LOGIN_PORT,user)
+            axios.post(process.env.LOGIN || LOGIN_PORT,user)
             .then(res =>{
                  alert(res.data.message)
                  setLoginUser(res.data.user)
