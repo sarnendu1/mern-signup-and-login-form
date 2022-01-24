@@ -78,7 +78,9 @@ app.post("/signup",(req,res)=>{
 })
 
 
-
+if(process.env.NODE_ENV=='production'){
+    app.use(express.static('client-build'))
+}
 
 app.listen(PORT,()=>{
     console.log("Backend Started At The Port 3001");
