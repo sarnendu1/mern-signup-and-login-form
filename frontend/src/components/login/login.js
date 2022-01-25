@@ -26,7 +26,7 @@ const Login = ({setLoginUser}) => {
     const login = () =>{
        
             const LOGIN = '' ;
-            axios.post('/login',user)
+            axios.post(`${LOGIN}/login`,user)
             .then(res =>{
                  alert(res.data.message)
                  setLoginUser(res.data.user)
