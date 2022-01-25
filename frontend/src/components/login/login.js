@@ -25,8 +25,8 @@ const Login = ({setLoginUser}) => {
 
     const login = () =>{
        
-            const LOGIN = 'https://signuplogin-form.herokuapp.com/' ;
-            axios.post('https://signuplogin-form.herokuapp.com/login',user)
+            const LOGIN = '' ;
+            axios.post('/login',user)
             .then(res =>{
                  alert(res.data.message)
                  setLoginUser(res.data.user)
