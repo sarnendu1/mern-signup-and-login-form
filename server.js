@@ -9,11 +9,11 @@ app.use(express.urlencoded());
 app.use(cors());
 
 const PORT = process.env.PORT || 3001 ;
-const URL = process.env.MONGODB_URI || 'mongodb+srv://sarnendu:rupu@cluster0.zqzj0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const URL = 'mongodb+srv://sarnendu:rupu@cluster0.zqzj0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 
 
-mongoose.connect(URL,{
+mongoose.connect(process.env.MONGODB_URI || URL,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 

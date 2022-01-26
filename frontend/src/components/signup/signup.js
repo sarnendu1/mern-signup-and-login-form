@@ -3,6 +3,9 @@ import "./signup.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+
+const SIGNUP = '' ;
+
 const SignUp = () => {
     const [user,setUser] = useState({
         name:"",
@@ -23,7 +26,7 @@ const SignUp = () => {
     const history= useHistory();
 
     const signUp = async() =>{
-        const SIGNUP = '' ;
+       
         const { name,email,password,reEnterPassword} = user;
         if(name && email && (password===reEnterPassword)){
             

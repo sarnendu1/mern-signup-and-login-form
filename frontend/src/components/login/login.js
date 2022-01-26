@@ -3,6 +3,9 @@ import { useState } from 'react';
 import "./login.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+
+const LOGIN = '' ;
+
 const Login = ({setLoginUser}) => {
 
     const history= useHistory();
@@ -25,7 +28,7 @@ const Login = ({setLoginUser}) => {
 
     const login = () =>{
        
-            const LOGIN = '' ;
+           
             axios.post(`${LOGIN}/login`,user)
             .then(res =>{
                  alert(res.data.message)
