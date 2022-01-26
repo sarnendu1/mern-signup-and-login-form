@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
+const Url = '';
 
 const PORT = process.env.PORT || 3001 ;
 const URL = 'mongodb+srv://sarnendu:rupu@cluster0.zqzj0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -35,7 +36,7 @@ app.get("/",(req,res)=>{
     res.send("Connected");
 })
 
-app.post("/login",(req,res)=>{
+app.post(`${Url}/login`,(req,res)=>{
     
     const {email, password}= req.body
     User.findOne({email:email},(err,user) =>{
@@ -54,7 +55,7 @@ app.post("/login",(req,res)=>{
     })
 })
 
-app.post("/signup",(req,res)=>{
+app.post(`${Url}/signup`,(req,res)=>{
     const {name, email, password}= req.body
     User.findOne({email:email},(err,user) =>{
         if(user){
