@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 
-const SIGNUP = '' ;
+const SIGNUP =process.env.SIGNUPPAGE || 'http://localhost:3001' ;
 
 const SignUp = () => {
     const [user,setUser] = useState({

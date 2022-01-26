@@ -4,7 +4,7 @@ import "./login.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-const LOGIN = '' ;
+const LOGIN = process.env.LOGINPAGE || 'http://localhost:3001' ;
 
 const Login = ({setLoginUser}) => {
 
